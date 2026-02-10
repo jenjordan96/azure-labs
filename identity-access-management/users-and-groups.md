@@ -32,8 +32,8 @@ New-MgGroup -DisplayName "SG-Sales-Users" -MailEnabled:$false -MailNickname "sgs
 
 
 ### 3. Troubleshooting: DeviceCodeCredentials Error
-- recevied DeviceCodeError while importing users
-- updated from PowerShell 5.1.26100.7705 to PowerShell 7
+- Recevied DeviceCodeError while importing users
+- Updated from PowerShell 5.1.26100.7705 to PowerShell 7
 winget install Microsoft.PowerShell
 
 
