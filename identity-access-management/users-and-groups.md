@@ -1,4 +1,6 @@
-# created users
+## Identity Provisioning: Users and Security Groups
+
+# Creates Users via Microsoft Graph
 
 New-MgUser `
  -DisplayName $user.DisplayName `
@@ -11,12 +13,19 @@ New-MgUser `
      ForceChangePasswordNextSignIn = $true
  }
 
-# created department security group
+ - Created an enabled account
+ - Assigned department attribute
+ - Forced password change at first sign in
+
+# Created Department Security Group
 
 New-MgGroup -DisplayName "SG-Finance-Users" -MailEnabled:$false -MailNickname "sgfinanceusers" -SecurityEnabled:$true
 New-MgGroup -DisplayName "SG-HR-Users" -MailEnabled:$false -MailNickname "sghrusers" -SecurityEnabled:$true
 New-MgGroup -DisplayName "SG-IT-Users" -MailEnabled:$false -MailNickname "sgitusers" -SecurityEnabled:$true
 New-MgGroup -DisplayName "SG-Sales-Users" -MailEnabled:$false -MailNickname "sgsalesusers" -SecurityEnabled:$true
+
+- Naming conventions based on deapartment
+- Security groups via M365 groups
 
 
 # DeviceCodeCredentials Error
@@ -25,7 +34,7 @@ New-MgGroup -DisplayName "SG-Sales-Users" -MailEnabled:$false -MailNickname "sgs
 - winget install Microsoft.PowerShell
 
 
-# automated user generator script
+# Automated User Creation 
 
 $users = @(
     @{First="Alex"; Last="Morgan"; Dept="IT"},
@@ -52,3 +61,6 @@ foreach ($u in $users) {
             ForceChangePasswordNextSignIn = $true
         }
 }
+- .csv file received from the HR department
+- reduces manual errors
+- easier RBAC assignment 
