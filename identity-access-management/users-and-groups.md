@@ -12,6 +12,7 @@ New-MgUser `
  }
 
 # created department security group
+
 New-MgGroup -DisplayName "SG-Finance-Users" -MailEnabled:$false -MailNickname "sgfinanceusers" -SecurityEnabled:$true
 New-MgGroup -DisplayName "SG-HR-Users" -MailEnabled:$false -MailNickname "sghrusers" -SecurityEnabled:$true
 New-MgGroup -DisplayName "SG-IT-Users" -MailEnabled:$false -MailNickname "sgitusers" -SecurityEnabled:$true
@@ -19,9 +20,12 @@ New-MgGroup -DisplayName "SG-Sales-Users" -MailEnabled:$false -MailNickname "sgs
 
 
 # DeviceCodeCredentials Error
+
 - updated from PowerShell 5.1.26100.7705 to PowerShell 7
 - winget install Microsoft.PowerShell
 
+
+# automated user generator script
 
 $users = @(
     @{First="Alex"; Last="Morgan"; Dept="IT"},
