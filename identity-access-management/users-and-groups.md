@@ -31,13 +31,13 @@ New-MgGroup -DisplayName "SG-IT-Users" -MailEnabled:$false -MailNickname "sgitus
 New-MgGroup -DisplayName "SG-Sales-Users" -MailEnabled:$false -MailNickname "sgsalesusers" -SecurityEnabled:$true
 
 
-# DeviceCodeCredentials Error
+### 3 Troubleshooting: DeviceCodeCredentials Error
 - recevied DeviceCodeError while importing users
 - updated from PowerShell 5.1.26100.7705 to PowerShell 7
 winget install Microsoft.PowerShell
 
 
-# Automated User Creation 
+### 4 Automated User Creation 
 
 - .csv file received from the HR department
 - Group-based identity structure was implemented to support scalable RBAC assignment and reduce direct user permission management.
