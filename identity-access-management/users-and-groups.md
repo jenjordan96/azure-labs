@@ -1,6 +1,10 @@
 ## Identity Provisioning: Users and Security Groups
 
-# Creates Users via Microsoft Graph
+### 1 Created Users via Microsoft Graph
+
+ - Created an enabled account
+ - Assigned department attribute
+ - Forced password change at first sign in
 
 New-MgUser `
  -DisplayName $user.DisplayName `
@@ -13,28 +17,28 @@ New-MgUser `
      ForceChangePasswordNextSignIn = $true
  }
 
- - Created an enabled account
- - Assigned department attribute
- - Forced password change at first sign in
+### 2 Created Department Security Groups
 
-# Created Department Security Group
+- Naming conventions based on deapartment
+- Security groups via M365 groups
 
 New-MgGroup -DisplayName "SG-Finance-Users" -MailEnabled:$false -MailNickname "sgfinanceusers" -SecurityEnabled:$true
 New-MgGroup -DisplayName "SG-HR-Users" -MailEnabled:$false -MailNickname "sghrusers" -SecurityEnabled:$true
 New-MgGroup -DisplayName "SG-IT-Users" -MailEnabled:$false -MailNickname "sgitusers" -SecurityEnabled:$true
 New-MgGroup -DisplayName "SG-Sales-Users" -MailEnabled:$false -MailNickname "sgsalesusers" -SecurityEnabled:$true
 
-- Naming conventions based on deapartment
-- Security groups via M365 groups
-
 
 # DeviceCodeCredentials Error
-
+- recevied DeviceCodeError while importing users
 - updated from PowerShell 5.1.26100.7705 to PowerShell 7
-- winget install Microsoft.PowerShell
+winget install Microsoft.PowerShell
 
 
 # Automated User Creation 
+
+- .csv file received from the HR department
+- reduces manual errors
+- easier RBAC assignment 
 
 $users = @(
     @{First="Alex"; Last="Morgan"; Dept="IT"},
@@ -61,6 +65,4 @@ foreach ($u in $users) {
             ForceChangePasswordNextSignIn = $true
         }
 }
-- .csv file received from the HR department
-- reduces manual errors
-- easier RBAC assignment 
+
