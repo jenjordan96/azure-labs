@@ -1,4 +1,6 @@
 ## Identity Provisioning: Users and Security Groups
+This lab establishes foundational identity structure prior to RBAC implementation.
+
 
 ### 1 Created Users via Microsoft Graph
 
@@ -19,8 +21,9 @@ New-MgUser `
 
 ### 2 Created Department Security Groups
 
-- Naming conventions based on deapartment
-- Security groups via M365 groups
+- Naming conventions based on department
+- Created security groups (not Microsoft 365 collaboration groups)
+
 
 New-MgGroup -DisplayName "SG-Finance-Users" -MailEnabled:$false -MailNickname "sgfinanceusers" -SecurityEnabled:$true
 New-MgGroup -DisplayName "SG-HR-Users" -MailEnabled:$false -MailNickname "sghrusers" -SecurityEnabled:$true
@@ -37,8 +40,8 @@ winget install Microsoft.PowerShell
 # Automated User Creation 
 
 - .csv file received from the HR department
-- reduces manual errors
-- easier RBAC assignment 
+- Group-based identity structure was implemented to support scalable RBAC assignment and reduce direct user permission management.
+
 
 $users = @(
     @{First="Alex"; Last="Morgan"; Dept="IT"},
