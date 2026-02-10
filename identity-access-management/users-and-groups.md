@@ -2,7 +2,7 @@
 This lab establishes foundational identity structure prior to RBAC implementation.
 
 
-### 1 Created Users via Microsoft Graph
+### 1. Created Users via Microsoft Graph
 
  - Created an enabled account
  - Assigned department attribute
@@ -19,7 +19,7 @@ New-MgUser `
      ForceChangePasswordNextSignIn = $true
  }
 
-### 2 Created Department Security Groups
+### 2. Created Department Security Groups
 
 - Naming conventions based on department
 - Created security groups (not Microsoft 365 collaboration groups)
@@ -31,13 +31,13 @@ New-MgGroup -DisplayName "SG-IT-Users" -MailEnabled:$false -MailNickname "sgitus
 New-MgGroup -DisplayName "SG-Sales-Users" -MailEnabled:$false -MailNickname "sgsalesusers" -SecurityEnabled:$true
 
 
-### 3 Troubleshooting: DeviceCodeCredentials Error
+### 3. Troubleshooting: DeviceCodeCredentials Error
 - recevied DeviceCodeError while importing users
 - updated from PowerShell 5.1.26100.7705 to PowerShell 7
 winget install Microsoft.PowerShell
 
 
-### 4 Automated User Creation 
+### 4. Automated User Creation 
 
 - .csv file received from the HR department
 - Group-based identity structure was implemented to support scalable RBAC assignment and reduce direct user permission management.
